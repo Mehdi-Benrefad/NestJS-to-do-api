@@ -76,4 +76,16 @@ export class TodosService {
         //on retourne le todo modifie
         return {updatedTodo:1, todo: todoToUpdate};
     }
+
+    delete(id: string){
+        const numberOfTodosBeforeDelete = this.todos.length;
+        //on filtre le tableau avec un condition afin d'eliminer le todo a supprimer
+        this.todos = [...this.todos.filter(t => (t.id !== +id))];
+        if(this.todos.length < numberOfTodosBeforeDelete){
+            return {deletedtodos:1 , nbTodo: this.todos.length}
+        }
+        else{
+            return {deletedtodos:0 , nbTodo: this.todos.length}
+        }
+    }
 }

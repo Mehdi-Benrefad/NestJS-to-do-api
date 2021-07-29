@@ -18,3 +18,5 @@
     8-3 On ajoute ce type a la requette du Post et dans la methode du service.
 9- Modifier un todo existant.
     Pour ce faire on cree 2 methodes, une dans le controlleur avec le decorateur @patch(), et une autre dans le service.
+10- Supprimer un todo:
+    Pour ce faire on cree 2 methodes, une dans le controlleur avec le decorateur @Delete(), et une autre dans le service
