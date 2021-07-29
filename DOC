@@ -1,0 +1,13 @@
+1- Creer un projet [nest new todo-app]
+2- Lancer l'application [npm run start:dev]
+3- Creer un module, un Controlleur et un sevice.
+    [nest g mo todos]
+    [nest g co todos]
+    [nest g s todos]
+4- On cree une methode fimdAll() dans le controlleur et on ajoute le methode get puis on va ajouter
+5- Typage a l'aide d'une interface:
+    5-1 Dans src on cree un repertoire interfaces:
+    5-2 On cree une interface todo pour typer les elements de la variable todos du service et la valeur de retour des 
+    methodes.
+6-Gerer le Post d'un nouveau todo:
+on cree 2 mwthodes une dans le controlleur vec le decorateur (@Posr())
