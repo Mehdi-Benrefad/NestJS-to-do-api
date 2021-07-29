@@ -1,3 +1,4 @@
+import { NotFoundException } from '@nestjs/common';
 import { Injectable } from '@nestjs/common';
 import { Todo } from 'src/interfaces/todo.interface';
 import { CreateTodoDto } from './dto/create-todo.dto';
@@ -45,5 +46,34 @@ export class TodosService {
 
     create(todo:CreateTodoDto){
         this.todos=[...this.todos,todo];
+    }
+
+    update(id: string , todo: Todo){
+        //on recupere le todo a modifier
+        const todoToUpdate = this.todos.find(todo => (todo.id === +id));
+        //on teste son exixtance
+        if(!todoToUpdate){
+            return new NotFoundException('this todo is not found');
+        }
+
+        //on effwctue nos affectations
+        if(todo.hasOwnProperty('done')){
+            todoToUpdate.done = todo.done;
+        }
+
+        if(todo.titre){
+            todoToUpdate.titre = todo.titre;
+        }
+
+        if(todo.description){
+            todoToUpdate.description = todo.description;
+        }
+
+        //on cree une cpie du tableau en changeant la nouvelle valeur du todo en question.
+        const updatedTodoes = this.todos.map(t => t.id !== +id ? t : todoToUpdate);
+        //on modifie dans notre tableau todos
+        this.todos=[...updatedTodoes]
+        //on retourne le todo modifie
+        return {updatedTodo:1, todo: todoToUpdate};
     }
 }

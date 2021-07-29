@@ -1,12 +1,12 @@
-1- Creer un projet [nest new todo-app]
-2- Lancer l'application [npm run start:dev]
+1- Creer un projet [nest new todo-app].
+2- Lancer l'application [npm run start:dev].
 3- Creer un module, un Controlleur et un sevice.
     [nest g mo todos]
     [nest g co todos]
     [nest g s todos]
-4- On cree une methode findAll() dans le controlleur et on ajoute le methode get puis on va ajouter
+4- On cree une methode findAll() dans le controlleur et on ajoute le methode get puis on va ajouter.
 5- Typage a l'aide d'une interface:
-    5-1 Dans src on cree un repertoire interfaces:
+    5-1 Dans src on cree un repertoire interfaces.
     5-2 On cree une interface todo pour typer les elements de la variable todos du service et la valeur de retour des 
     methodes.
 6-Gerer le Post d'un nouveau todo:
@@ -14,5 +14,7 @@
 7- Recuperer un todo par son id.
 8- Typage du Body d'une requette Post a l'aide d'un DTO.
     8-1 On cree un dossier dto a l'iterieur du dossier src/totos.
-    8-2 On cree un fichier "create-todo.dto.ts" dans le fichier src/todos/dto
-    8-3 On ajoute ce type a la requette du Post et dans la methode du service
+    8-2 On cree un fichier "create-todo.dto.ts" dans le fichier src/todos/dto.
+    8-3 On ajoute ce type a la requette du Post et dans la methode du service.
+9- Modifier un todo existant.
+    Pour ce faire on cree 2 methodes, une dans le controlleur avec le decorateur @patch(), et une autre dans le service.
